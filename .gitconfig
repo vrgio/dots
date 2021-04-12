@@ -1,0 +1,11 @@
+[init]
+  defaultBranch = main
+[user]
+  email = me@localhost
+  name = vrgio
+[alias]
+  undo = "!f() { git reset --hard $(git rev-parse--abbrev-ref HEAD)@{${1-1}}; }; f"
+  nicelog = log --color --graph --pretty --abbrev-commit
+  lastdiff = "diff --cached HEAD^"
+[pretty]
+  custom = "%Cred%h%Creset -%d %C(yellow)%s %Cgreen(%cr) %C(bold blue)<%an>%Creset"

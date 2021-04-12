@@ -1,0 +1,7 @@
+#swap
+*.sw?
+#bkup
+*.bk
+*.orig
+#dot
+.dot

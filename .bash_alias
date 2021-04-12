@@ -1,0 +1,43 @@
+#!/bin/bash
+
+### quick
+alias DU="du -sh * | sort -nr | more"
+alias WEATHER="curl wttr.in/Athens,Greece?format=3"
+alias FORECAST="curl wttr.in/Athens,Greece"
+alias JPEG="import screenshot.jpg && display screenshot.jpg"
+alias PNG="import screenshot.png && display screenshot.png"
+alias MIRROR="wget -m -k -E -p -np -w 10 -l 8 -t 1 -T 2 " # usage: MIRROR url
+alias RPASS="< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-64};echo;"
+
+### git
+alias gitcl="git clone --depth=1"
+alias gita="git add ."
+alias gits="git status"
+alias gitpl="git pull upstream main"
+alias gitps="git push"
+alias gitgo="git add . && git commit -am" # usage: gitgo "commit message"
+alias gitlog='git log --since="last month" --author="$(git config user.name)"'
+
+### ssh
+alias shval='eval $(ssh-agent) &&
+  ssh-add &&
+  echo -ne "\033]0;ssh - ${TERM}\007"'
+
+### python venv
+alias pmkvenv="python3 -m venv venv"
+alias psrsvenv='source venv/bin/activate &&
+  echo -ne "\033]0;venv - ${TERM}\007"'
+
+### tmux
+alias tmux="TERM=screen-256color-bce tmux"
+
+### dotfiles
+alias dot="/usr/bin/git --git-dir=${HOME}/.dot/ --work-tree=${HOME}"
+
+### colourise output
+export LS_COLOR="--color=auto"
+export LS_PREFS="-lhB"
+alias ls="ls ${LS_COLOR}"
+alias grep="grep --color=always"
+alias less="less --RAW-CONTROL-CHARS"
+alias diff="diff --color=auto"
