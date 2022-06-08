@@ -1,0 +1,14 @@
+! Fonts
+Xft.antialias: true
+XTerm*renderFont: true
+XTerm*faceName: Terminus
+XTerm*faceSize: 12
+XTerm*faceSize1: 14
+XTerm*faceSize2: 16
+XTerm*faceSize3: 20
+XTerm*faceSize4: 22
+XTerm*faceSize5: 24
+XTerm*faceSize6: 32
+XTerm.vt100.renderFont: true
+XTerm.vt100.faceName: Terminus
+URxvt*font: xft:Terminus-12

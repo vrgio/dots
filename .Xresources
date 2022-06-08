@@ -1,0 +1,42 @@
+#include ".config/xres/fonts"
+#include ".config/xres/theme"
+
+! black
+*color0: col00
+! red3
+*color1: col01
+! green3
+*color2: col02
+! yellow3
+*color3: col03
+! blue2
+*color4: col04
+! magenta3
+*color5: col05
+! cyan3
+*color6: col06
+! gray90
+*color7: col07
+
+! gray50
+*color8: col08
+! red
+*color9: col09
+! green
+*color10: col0A
+! yellow
+*color11: col0B
+! light blue
+*color12: col0C
+! magenta
+*color13: col0D
+! cyan
+*color14: col0E
+! white
+*color15: col0F
+
+*foreground: col07
+*background: col00
+*cursorColor: col03
+
+#include ".config/xres/rxvt"

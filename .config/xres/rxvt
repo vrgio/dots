@@ -1,0 +1,10 @@
+! URxvt & URxvt256c
+URxvt*inheritPixmap: true
+URxvt*transparent: true
+URxvt*shading: 20
+URxvt*scrollBar: false
+URxvt*scrollBar_right: false
+
+URxvt256c*termName: URxvt
+URxvt256c*depth: 32
+URxvt256c*background: [75]#000000

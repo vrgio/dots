@@ -1,0 +1,19 @@
+!moody-sunset
+
+#define col00 #030207
+#define col01 #A22817
+#define col02 #535935
+#define col03 #CE8E2C
+#define col04 #536071
+#define col05 #9C3D70
+#define col06 #786985
+#define col07 #ACA7C7
+
+#define col08 #817C94
+#define col09 #C93C1E
+#define col0A #858F55
+#define col0B #D49D46
+#define col0C #5E7494
+#define col0D #9C5179
+#define col0E #82658C
+#define col0F #EBCBAC
