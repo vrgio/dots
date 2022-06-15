@@ -1,0 +1,147 @@
+# twmrc
+
+NoGrabServer
+DecorateTransients
+RestartPreviousState
+NoTitleHighlight
+RandomPlacement
+
+TitleButtonBorderWidth 0
+
+TitleFont "-*-terminus-*-*-*-*-14-*-*-*-*-*-iso10646-1"
+ResizeFont "-*-terminus-*-*-*-*-14-*-*-*-*-*-iso10646-1"
+MenuFont "-*-terminus-*-*-*-*-14-*-*-*-*-*-iso10646-1"
+IconFont "-*-terminus-medium-*-*-*-*-140-*-*-*-*-iso10646-1"
+IconManagerFont "-*-terminus-medium-*-*-*-*-140-*-*-*-*-iso10646-1"
+#ClientBorderWidth
+
+
+# Custom colors
+# https://en.wikipedia.org/wiki/X11_color_names#Color_name_chart
+Color
+{
+  DefaultBackground "rgb:03/02/07"
+  DefaultForeground "rgb:eb/cb/ac"
+
+# borders
+  BorderTileBackground "rgb:03/02/07"
+  BorderColor "rgb:a2/28/17"
+
+# window title
+  TitleBackground "rgb:78/69/85"
+  TitleForeground "rgb:03/02/07"
+
+# menu
+  MenuBackground "rgb:82/65/8c"
+  MenuForeground "rgb:03/02/07"
+  MenuBorderColor "rgb:78/69/85"
+  MenuTitleBackground "rgb:03/02/07"
+  MenuTitleForeground "rgb:ac/a7/c7"
+# icons (after iconify)
+  IconBackground "rgb:15/14/1A"
+  IconForeground "rgb:D1/91/F"
+  IconBorderColor "rgb:57/54/59"
+# icon manager
+  IconManagerBackground "rgb:15/14/1A"
+  IconManagerForeground "rgb:eb/1c/07"
+  IconManagerHighlight "rgb:eb/1c/09"
+}
+
+# icon manager
+ShowIconManager
+IconifyByUnmapping
+IconManagerGeometry "=800x65+0+0" 7
+IconManagers {
+  "xterm" "=160x30-0+25" 1
+  "urxvt256c" "=160x30-0+260" 1
+  "gvim"  "=160x30-0+415" 1
+}
+IconManagerDontShow {
+  "gkrellm"
+  "xclock"
+}
+NoTitle {
+  "TWM Icon Manager"
+  "xterm Icon Manager"
+  "urxvt256c Icon Manager"
+  "gvim Icon Manager"
+  "xclock"
+  "gkrellm"
+}
+
+#
+# Define some useful functions for motion-based actions.
+#
+MoveDelta 3
+Function "move-or-lower" { f.move f.deltastop f.lower }
+Function "move-or-raise" { f.move f.deltastop f.raise }
+Function "move-or-iconify" { f.move f.deltastop f.iconify }
+
+#
+# Set some useful bindings.  Sort of uwm-ish, sort of simple-button-ish
+#
+Button3 = : root : f.menu "mainmen"
+Button1 = : root : f.menu "defops"
+
+Button1 = m : window|icon : f.function "move-or-lower"
+Button2 = m : window|icon : f.iconify
+Button3 = m : window|icon : f.function "move-or-raise"
+
+Button1 = : title : f.function "move-or-raise"
+Button2 = : title : f.raiselower
+
+Button1 = : icon : f.function "move-or-iconify"
+Button2 = : icon : f.iconify
+
+Button1 = : iconmgr : f.iconify
+Button2 = : iconmgr : f.iconify
+
+#
+# And a menus with the usual things
+#
+
+menu "defops"
+{
+"Twm"	f.title
+"Iconify"	f.iconify
+"Resize"	f.resize
+"Move"		f.move
+"Raise"		f.raise
+"Lower"		f.lower
+""		f.nop
+"Show Iconmgr"	f.showiconmgr
+"Hide Iconmgr"	f.hideiconmgr
+""		f.nop
+"Kill"		f.destroy
+"Delete"	f.delete
+""		f.nop
+"Restart"	f.restart
+"Exit"		f.quit
+}
+
+menu "mainmen"
+{
+"Programs"  f.title
+"xterm"   f.exec "xterm&"
+"gvim"		f.exec "gvim&"
+"File Manager"	f.exec "xfe&"
+"Firefox" f.exec "firefox&"
+""		f.nop
+"urxvt" f.exec "urxvt256c&"
+"Utilities"	f.menu "utilities"
+"Exit"		f.quit
+}
+
+menu "utilities"
+{
+  "Utilities"	f.title
+  "Screenshot - JPG"  f.exec "import screenshot.jpg && display screenshot.jpg&"
+  "Screenshot - PNG"	f.exec "import screenshot.png && display screenshot.png&"
+  "Calculator"	f.exec "xcalc&"
+  "Magnifier" f.exec "xmag&"
+  "Clock" f.exec "xclock&"
+}
+
+# Closing button on the titlebar
+IconDirectory "~/.config/icons/" # Directory for non default icons
+RightTitleButton "close.xbm"=f.delete
