@@ -45,8 +45,12 @@ Get_wm() {
   # xprop attempt, copy from neofetch
   if command -v xprop &> /dev/null; then
     tmp_wm=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)
+    # windowmaker is weird
+    is_wmaker=$(xprop -root -notype _WINDOWMAKER_NOTICEBOARD)
     if [ "${tmp_wm#* }" = " not found." ]; then
       wm=""
+    elif [ -n "$is_wmaker" ]; then
+      wm="Window Maker"
     else
       id=${tmp_wm##* }
       wm=$(xprop -id "$id" -notype -len 100 -f _NET_WM_NAME 8t)
