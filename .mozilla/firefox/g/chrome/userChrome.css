@@ -1,0 +1,64 @@
+/* TABS on bottom */
+
+*|*:root {
+  --tab-toolbar-navbar-overlap: 0px !important;
+
+  --tab-min-height: 28px !important;
+  --tab-min-width:  60px !important;
+
+  --tab-adjust:  3px; /* adjust tab bar 65-73 */
+  --tab-caption: 5px; /* caption buttons on tab bar */
+}
+
+/* TAB BAR - below nav-bar */
+#navigator-toolbox toolbar:not(#nav-bar):not(#toolbar-menubar) {
+  -moz-box-ordinal-group: 10 !important;
+}
+#TabsToolbar {
+  -moz-box-ordinal-group: 1000 !important;
+}
+
+#TabsToolbar {
+  display: block !important;
+  height: 33px !important;
+  max-height: 33px !important;
+  position: absolute !important;
+  bottom: 0 !important; 
+  width: 100vw !important;
+}
+
+#tabbrowser-tabs {
+  width: 100vw !important;
+}
+
+/* navigator-toolbox - PADDING */
+*|*:root:not([chromehidden*="toolbar"]) #navigator-toolbox {
+  position: relative !important;  /*89+*/
+  padding-bottom: calc(var(--tab-min-height) + 1px) !important; /*ADJUST*/
+}
+
+/* TABS: height */
+#tabbrowser-tabs,
+#tabbrowser-tabs > .tabbrowser-arrowscrollbox,
+.tabbrowser-tabs[positionpinnedtabs] > .tabbrowser-tab[pinned] {
+  min-height: var(--tab-min-height) !important;
+  max-height: var(--tab-min-height) !important;
+}
+
+#TabsToolbar {
+  height: var(--tab-min-height) !important;
+  margin-bottom: 1px !important;
+  box-shadow: ThreeDShadow 0 -1px inset, -moz-dialog 0 1px !important;}
+
+
+/* Remove tab top border */
+.tab-line {
+  background-color: #0a84ff !important;
+  height: 0px !important;
+}
+
+/* == Bookmarks bar == */
+
+#PersonalToolbar {
+  min-height: 26px !important;
+}
