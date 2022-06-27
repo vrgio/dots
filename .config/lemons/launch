@@ -1,0 +1,13 @@
+#!/bin/bash
+
+. $HOME/.config/lemons/configs
+
+T="%{A:urxvt:} %{F$C4}\uf120 %{A}"
+FF="%{A:firefox:} %{F$C5}\uf269 %{A}"
+E="%{A:gvim:} %{F$C6}\uf15c %{A}"
+FM="%{A:pcmanfm:} %{F$C3}\uf015 %{A}"
+PW="%{A:keepassxc:} %{F$FG_C}\uf084 %{A}"
+TB="%{A:thunderbird:} %{F$C1}\uf2b6 %{A}"
+
+echo -e "  ${T}${SPACER}${FF}${SPACER}${E}${SPACER}${FM}${SPACER}${PW}${SPACER}${TB}  " | lemonbar -p -d -a 6 -g 300x40+20+726 -B "$BG_C" -F "FG_C" -f "$FONT2" -f "FONT1" | while read line; do eval "${line} &"; done 
+wait
