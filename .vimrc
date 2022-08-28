@@ -1,4 +1,4 @@
-" vimrc
+" vimrc 9.0
 
 " General
 " *************
@@ -53,11 +53,8 @@ inoremap <ESC> <ESC>:set hlsearch<CR>
 
 " Colourscheme
 " ***************
-try
-  colorscheme universi
-catch
-  set background=dark
-endtry
+set t_Co=16
+set background=dark
 
 " Gui (gVim)
 " ***************
@@ -68,20 +65,11 @@ if has('gui_running')
   set titlestring=%t%(\ %M%)
   " colours
   try
-    colorscheme universi
+    colorscheme basetpl
   catch
     colorscheme habamax
   endtry
 endif
-
-" netrw
-" ***************
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-" open files in new horizontal window
-let g:netrw_browse_split = 1
-" 25% width
-let g:netrw_winsize = 25
 
 " bkup
 " ******************
