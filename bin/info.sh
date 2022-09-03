@@ -49,7 +49,7 @@ Get_wm() {
     is_wmaker=$(xprop -root -notype _WINDOWMAKER_NOTICEBOARD)
     if [ "${tmp_wm#* }" = " not found." ]; then
       wm=""
-    elif [ -n "$is_wmaker" ]; then
+    elif [ "${is_wmaker##* }"  != "window." ]; then
       wm="Window Maker"
     else
       id=${tmp_wm##* }
