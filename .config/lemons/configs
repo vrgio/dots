@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Colours
+BG_C="#0F0A26"
+FG_C="#f5f0ff"
+HL_C="#B14348"
+RED_C="#C43B41"
+LIGHT_C="#d3cef2"
+BLUE_C="#DC7F32"
+
+C0="#0F0A26"
+C1="#B14348"
+C2="#81B86A"
+C3="#DC7F32"
+C4="#443AC8"
+C5="#AC7EBF"
+C6="#8982EC"
+C7="#d3cef2"
+
+# Fonts
+FONT1="SourceCodePro:pixelsize=14"
+FONT2="FontAwesome:pixelsize=14"
+
+# Spacer
+SPACER="   %{F#744521}|%{F#f0a17a}   "

@@ -1,0 +1,19 @@
+!"purple_city"
+
+#define col00 #0F0A26
+#define col01 #B14348
+#define col02 #81B86A
+#define col03 #DC7F32
+#define col04 #443AC8
+#define col05 #AC7EBF
+#define col06 #8982EC
+#define col07 #d3cef2
+
+#define col08 #736f8f
+#define col09 #C43B41
+#define col0A #ABD699
+#define col0B #FAB898
+#define col0C #5D51DB
+#define col0D #C499D6
+#define col0E #84A1DF
+#define col0F #f5f0ff
