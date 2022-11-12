@@ -69,6 +69,8 @@ if has('gui_running')
   catch
     colorscheme habamax
   endtry
+  " browse filter to *.*
+  autocmd FileType * let b:browsefilter = ''
 endif
 
 " netrw
