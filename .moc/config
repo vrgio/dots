@@ -4,7 +4,7 @@ StartInMusicDir = yes
 # Tracks
 ReadTags = yes
 Sort = FileName
-FormatString = "%(n:%n :)%(t:%t:)"
+FormatString = "%(t:%t:) - %(a:%a :)"
 # Theme
 Theme = nightly_theme
 XTermTheme = transparent-background

@@ -17,6 +17,10 @@ export PAGER="most"
 # pass
 export PASSWORD_STORE_DIR="$HOME/.config/password-store/"
 
+# nnn
+export NNN_FIFO="/tmp/nnn_${USER}.fifo"
+export NNN_PLUG="p:preview-tui"
+
 # Paths
 PATH=/bin:/usr/bin:/usr/games
 

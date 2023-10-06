@@ -1,4 +1,4 @@
-/* TABS on bottom */
+
 
 *|*:root {
   --tab-toolbar-navbar-overlap: 0px !important;
@@ -48,8 +48,13 @@
 #TabsToolbar {
   height: var(--tab-min-height) !important;
   margin-bottom: 1px !important;
-  box-shadow: ThreeDShadow 0 -1px inset, -moz-dialog 0 1px !important;}
+  box-shadow: ThreeDShadow 0 -1px inset, -moz-dialog 0 1px !important;
+}
 
+/* Square tabs */
+.tab-background {
+	border-radius: 0;
+}
 
 /* Remove tab top border */
 .tab-line {
@@ -61,4 +66,30 @@
 
 #PersonalToolbar {
   min-height: 26px !important;
+}
+
+/* == Hide addon button == */
+#unified-extensions-button,
+#unified-extensions-button > .toolbarbutton-icon {
+  width: 0px !important;
+  padding: 0px !important;
+}
+
+/* == Hide hamburger menu == */
+/*#PlacesChevron {
+  display: none !important;
+}*/
+#PanelUI-button,
+#PanelUI-menu-button {
+  display: none !important;
+  min-width: 0.1px !important;
+  width: 0.1px !important;
+  max-width: 0.1px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* == Menu toolbar padding == */
+#toolbar-menubar {
+	padding: 2px 0 !important;
 }
