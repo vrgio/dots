@@ -1,0 +1,19 @@
+!"autumn_leaves"
+
+#define col00 #232333
+#define col01 #e03b5d
+#define col02 #83dc75
+#define col03 #f5e7cb
+#define col04 #386a60
+#define col05 #9B408A
+#define col06 #74c8a9
+#define col07 #dcc4b3
+
+#define col08 #393939
+#define col09 #ae2e49
+#define col0A #66aa5b
+#define col0B #c3b8a2
+#define col0C #376960
+#define col0D #6C115B
+#define col0E #82d0a3
+#define col0F #dbd1c7

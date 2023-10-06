@@ -1,0 +1,36 @@
+#!/bin/bash
+
+. $HOME/.config/lemons/configs
+
+# functions
+Showdate() {
+  DATE=$(date "+%a, %d %b %Y")
+  echo -e "%{F$LIGHT_C}\uf073 %{F$FG_C}$DATE"
+}
+
+Showclock() {
+  CLOCK=$(date "+%H:%M")
+  echo -e "%{F$BLUE_C}\uf017 %{F$FG_C}$CLOCK"
+}
+
+Volume() {
+	VOL=$(amixer sget 'Master'|grep --color=never "Left: Playback"| cut -d'[' -f2 | cut -d'%' -f1)
+	echo -e "%{F$RED_C}\uf028 %{F$FG_C}$VOL"
+}
+
+Keyboard() {
+  LANGCODE_LINE=$(xset -q | grep -A 0 'LED')
+  LANGCODE=${LANGCODE_LINE:(-4)}
+  if [ "$LANGCODE" = "1002" ]; then
+    CURRLANG="el"
+  else
+    CURRLANG="us"
+  fi
+  echo -e "%{F$C5}\uf11c %{F$FG_C}$CURRLANG"
+}
+
+# bar
+while true; do
+  echo "  $(Volume)${SPACER}$(Keyboard)${SPACER}$(Showdate)${SPACER}$(Showclock)  "
+	sleep 60 
+done | lemonbar -p -d -g 500x24+866+744 -B "$BG_C" -F "$FG_C" -f "$FONT1" -f "$FONT2" -o 0 -o -2
