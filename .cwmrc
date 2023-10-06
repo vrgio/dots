@@ -25,7 +25,8 @@ bind-key 4-p dmenu_run
 bind-key 4-m menu-cmd
 bind-key 4-backslash window-vtile
 bind-key 4-slash window-htile
-bind-key 4-F1 "import -window root screen.png"
+bind-key 4-F1 "sleep 2;import -window root screen.png"
+bind-key 4-x quit
 
 ignore bar
 
@@ -36,5 +37,6 @@ command gvim "gvim"
 command file-manager "pcmanfm"
 command mocp "urxvt256c -e mocp"
 command thunder "thunderbird"
+command calc "xcalc"
 command tmux "urxvt256c -e tmux attach"
 command screens "import -window root screen.png"

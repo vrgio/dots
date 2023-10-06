@@ -22,7 +22,7 @@ xset -b
 # always start
 /usr/bin/numlockx
 
-# start twm
+# start cwm
 picom &
 feh --bg-scale ~/desktop_pics/spacecity_1.jpg &
 sh "$HOME/.config/lemons/top" &
