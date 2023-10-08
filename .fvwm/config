@@ -92,7 +92,7 @@ MoveThreshold 3
 Style * SloppyFocus, MouseFocusClickRaises
 
 # Default Font
-DefaultFont "xft:Noto Sans:style=Regular:size=8:antialias=True"
+DefaultFont "xft:Noto Sans:style=Regular:size=10:antialias=True"
 
 # Window Placement
 Style * MinOverlapPlacement, GrabFocusOff, !UsePPosition
@@ -135,9 +135,9 @@ Style FvwmIconMan NoTitle, !Borders, NoHandles, NeverFocus, Sticky, WindowListSk
 Colorset 0 fg #dcc4b3, bg #232333, hi, sh, Plain, NoShape
 # Windows
 Colorset 1 fg #dbd1c7, bg #6C115B, hi, sh, Plain, NoShape
-Colorset 2 fg #dbd1c7, bg #e03b5d, hi, sh, Plain, NoShape
+Colorset 2 fg #393939, bg #e03b5d, hi, sh, Plain, NoShape
 Colorset 3 fg #dbd1c7, bg #6C115B, hi #6C115B, sh #6C115B, Plain, NoShape
-Colorset 4 fg #dbd1c7, bg #e03b5d, hi #e03b5d, sh #e03b5d, Plain, NoShape
+Colorset 4 fg #393939, bg #e03b5d, hi #e03b5d, sh #e03b5d, Plain, NoShape
 # Menus
 Colorset 5 fg #393939, bg #c3b8a2, hi #393939, sh #c3b8a2, Plain, NoShape
 Colorset 6 fg #232333, bg #c3b8a2, hi #393939, sh #c3b8a2, Plain, NoShape
