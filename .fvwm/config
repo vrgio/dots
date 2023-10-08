@@ -89,7 +89,7 @@ ClickTime 250
 MoveThreshold 3
 
 # SloppyFocus
-Style * SloppyFocus
+Style * SloppyFocus, MouseFocusClickRaises
 
 # Default Font
 DefaultFont "xft:Noto Sans:style=Regular:size=8:antialias=True"
