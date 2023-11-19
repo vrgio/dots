@@ -1,0 +1,164 @@
+# ctwmrc
+
+TitleFont "-*-terminus-*-*-*-*-14-*-*-*-*-*-iso10646-1"
+ResizeFont "-*-terminus-*-*-*-*-14-*-*-*-*-*-iso10646-1"
+MenuFont "-*-terminus-*-*-*-*-14-*-*-*-*-*-iso10646-1"
+IconFont "-*-terminus-medium-*-*-*-*-140-*-*-*-*-iso10646-1"
+IconManagerFont "-*-terminus-medium-*-*-*-*-140-*-*-*-*-iso10646-1"
+ShowWorkSpaceManager			# start with workspace manager up
+IconDirectory "~/.config/icons/" # Directory for non default icons
+ShortAllWindowsMenus # don't show wspmanager/iconmanager in TwmWindows menu
+#UseThreeDMenus
+#UseThreeDTitles
+#UseThreeDIconManagers
+#UseThreeDBorders
+#UseThreeDWMap
+#SunkFocusWindowTitle
+
+# Colours
+# -------
+
+Color
+{
+    BorderColor           "#6C71C4"
+    DefaultBackground     "#DC322F"
+    DefaultForeground     "#222324"
+    BorderTileBackground  "#DC322F"
+    BorderTileForeground  "#222324"
+    TitleBackground       "#DC322F"
+    TitleForeground       "#EEE8D5"
+    MenuBackground        "#6C71C4"
+    MenuForeground        "#EEE8D5"
+    MenuTitleBackground   "#DC322F"
+    MenuTitleForeground   "#EEE8D5"
+    IconBackground        "#DC322F"
+    IconForeground        "#222324"
+    IconBorderColor       "gray85"
+    IconManagerBackground "#DC322F"
+    IconManagerForeground "#EEE8D5"
+    MapWindowBackground   "#DC322F"
+    MapWindowForeground   "#EEE8D5"
+}
+
+NoTitleHighlight
+TitleButtonBorderWidth 0
+
+# Workspaces
+# ----------
+NoImagesInWorkSpaceManager
+WorkSpaceManagerGeometry        "120x60+5-0" 2 # 2: n of columns
+# workspace "name" [{bg-button [fg-button] [bg-root] [fg-root] [pixmap-root]}]
+WorkSpaces {
+    "Ena"   {"#222324" "#222324" "#222324" "#222324" "jpeg:~/desktop_pics/anders-jilden-cYrMQA7a3Wc-village_on_mountain_cliff.jpg"}
+    "Dyo"   {"#222324" "#222324" "#222324" "#222324" "jpeg:~/desktop_pics/anders-jilden-cYrMQA7a3Wc-village_on_mountain_cliff.jpg"}
+    "Tria" {"#222324" "#222324" "#222324" "#222324" "jpeg:~/desktop_pics/anders-jilden-cYrMQA7a3Wc-village_on_mountain_cliff.jpg"}
+    "Tessera"  {"#222324" "#222324" "#222324" "#222324" "jpeg:~/desktop_pics/anders-jilden-cYrMQA7a3Wc-village_on_mountain_cliff.jpg"}
+}
+
+
+# Icons
+# -----
+IconifyByUnmapping # no icon when iconified
+IconJustification "center" # image/title location
+MaxIconTitleWidth 120
+IconBorderWidth 1
+SchrinkIconTitles # shrink icon titles a'la Motif
+# Where on the screen to put icons and how to place them.
+IconRegion "140x684+0+0"   North East 130 90  { }
+IconRegion "140x684+140+0" North East 130 90  { }
+#IconRegionAlignement "bottom"
+#IconRegionJustification "center"
+
+ShowIconManager
+# UseThreeDIconManagers
+# SortIconManager # sort alphabetically
+IconManagerGeometry		"160x300+0+24" 1 # 1 column
+IconManagerDontShow {
+    "WorkSpaceManager"
+}
+
+NoTitle {                  # little programs that look like icons
+    "TWM Icon Manager"
+    "WorkSpaceManager"
+}
+#
+# Define some useful functions for motion-based actions.
+#
+MoveDelta 3
+Function "move-or-lower" { f.move f.deltastop f.lower }
+Function "move-or-raise" { f.move f.deltastop f.raise }
+Function "move-or-iconify" { f.move f.deltastop f.iconify }
+
+#
+# Set some useful bindings.  Sort of uwm-ish, sort of simple-button-ish
+#
+Button3 =	: root		: f.menu "defops"
+Button2 =	: root		: f.menu "TwmWindows"
+Button1 =	: root		: f.menu "windowops"
+
+Button1 = m	: window|icon	: f.function "move-or-lower"
+Button2 = m	: window|icon	: f.iconify
+Button3 = m	: window|icon	: f.function "move-or-raise"
+
+Button1 =	: title		: f.function "move-or-raise"
+Button2 =	: title		: f.raiselower
+Button1 = m     : title		: f.movetitlebar
+RightTitleButton "close.xbm"=f.delete
+
+Button1 =	: icon		: f.function "move-or-iconify"
+Button2 =	: icon		: f.iconify
+
+Button1 =	: iconmgr	: f.iconify
+Button2 =	: iconmgr	: f.iconify
+
+Button1 =	: frame		: f.resize
+Button1 = m	: frame		: f.move
+Button2 =	: frame		: f.raiselower
+#
+# And a menus with the usual things
+#
+StayUpMenus
+menu "defops"
+{
+    "Twm"		f.title
+    "Xterm"		!"xterm&"
+    "Gvim"  !"gvim&"
+    "Firefox" !"firefox&"
+    "GIMP"  !"gimp&"
+    "Geeqie"  !"geeqie&"
+    "Calculator"	!"xcalc&"
+    "Xman"		!"xman &"
+    "Xmag"		!"xmag&"
+    ""			f.nop
+    "Restart"		f.restart
+    "Exit"		f.quit
+}
+
+menu "windowops" {
+    "Windows"		f.title
+    "Xterm"		!"xterm&"
+    ""			f.nop
+    "Occupy"		f.occupy
+    "Occupy All"	f.occupyall
+    "Iconify"		f.iconify
+    "Refresh"		f.refresh
+    "Vanish"		f.vanish
+    "Info"		f.identify
+    ""			f.separator
+    "Resize"		f.resize
+    "Move"		f.move
+    "Animate"		f.startanimation
+    "Don't animate"	f.stopanimation
+    ""			f.separator
+    "Send Delete"	f.delete
+    "Kill Window"	f.destroy
+    "Pin menu"		f.pin
+    ""			f.nop
+    "Exit"		f.quit
+}
+
+# Keybindings
+# -----------
+
+IgnoreLockModifier # ignore caps lock
+"P" = m4 :all  :!"dmenu_run&"

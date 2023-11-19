@@ -1,0 +1,19 @@
+!"nicetheme"
+
+#define col00 #222324
+#define col01 #DC322F
+#define col02 #009931
+#define col03 #B58900
+#define col04 #268BD2
+#define col05 #D33682
+#define col06 #2AA198
+#define col07 #EEE8D5
+
+#define col08 #657B83
+#define col09 #E55436
+#define col0A #38CD87
+#define col0B #D9AD26
+#define col0C #6C71C4
+#define col0D #D85AB5
+#define col0E #46C8BF
+#define col0F #FDF6E3
